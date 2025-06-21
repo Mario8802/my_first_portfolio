@@ -1,67 +1,474 @@
+{#{% extends "base.html" %}#}
+{#{% block title %}Home – Mario Peychev{% endblock %}#}
+{#{% block content %}#}
+{#{% load static %}#}
+{##}
+{#<!-- ===== HERO SECTION ===== -->#}
+{#<section class="hero py-5 text-white text-center" aria-labelledby="hero-heading">#}
+{#  <div class="container">#}
+{#    <h1 id="hero-heading" class="display-3 fw-bold mb-4" data-aos="fade-up">Building Next-Gen Web Solutions</h1>#}
+{#    <p class="lead" data-aos="fade-up" data-aos-delay="150">From secure backends with <span class="text-info">Django</span> to modern DevOps automation.</p>#}
+{#    <div data-aos="fade-up" data-aos-delay="300">#}
+{#     <a href="https://www.google.com" target="_blank" class="btn btn-accent btn-lg me-2">🔍 Search on Google</a>#}
+{#<a href="https://chat.openai.com" target="_blank" class="btn btn-outline-light btn-lg">💬 Ask ChatGPT</a>#}
+{##}
+{#    </div>#}
+{#  </div>#}
+{#</section>#}
+{##}
+{#<!-- ===== PYTHON & DJANGO ===== -->#}
+{#<section class="py-5 bg-dark text-light" aria-labelledby="django-heading">#}
+{#  <div class="container">#}
+{#    <div class="row align-items-center">#}
+{#      <div class="col-md-6" data-aos="fade-right">#}
+{#        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django" class="img-fluid">#}
+{#      </div>#}
+{#      <div class="col-md-6" data-aos="fade-left">#}
+{#        <h2 id="django-heading" class="text-info">Python & Django</h2>#}
+{#        <ul class="mb-3">#}
+{#          <li>Django ORM · REST APIs</li>#}
+{#          <li>Authentication · Admin customization</li>#}
+{#          <li>Deployment on Render & GitHub Actions</li>#}
+{#        </ul>#}
+{#        <a href="https://www.djangoproject.com/" target="_blank" class="btn btn-outline-info btn-sm">Learn more</a>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</section>#}
+{##}
+{#<!-- ===== POSTGRES ===== -->#}
+{#<section class="py-5 bg-secondary text-light" aria-labelledby="postgres-heading">#}
+{#  <div class="container">#}
+{#    <div class="row align-items-center">#}
+{#      <div class="col-md-6" data-aos="fade-right">#}
+{#        <h2 id="postgres-heading" class="text-warning">PostgreSQL</h2>#}
+{#        <ul class="mb-3">#}
+{#          <li>Relational data modeling</li>#}
+{#          <li>Aggregations · Joins · Constraints</li>#}
+{#          <li>Integrated with Django ORM</li>#}
+{#        </ul>#}
+{#        <a href="https://www.postgresql.org/" target="_blank" class="btn btn-outline-warning btn-sm">Official Site</a>#}
+{#      </div>#}
+{#      <div class="col-md-6 text-end" data-aos="fade-left">#}
+{#        <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL" class="img-fluid" style="max-height:120px;">#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</section>#}
+{##}
+{#<!-- ===== FRONTEND STACK ===== -->#}
+{#<section class="py-5 bg-black text-light" aria-labelledby="frontend-heading">#}
+{#  <div class="container">#}
+{#    <h2 id="frontend-heading" class="text-success mb-4" data-aos="fade-up">Frontend Stack</h2>#}
+{#    <div class="row g-4">#}
+{#      <div class="col-md-4" data-aos="zoom-in">#}
+{#        <div class="glass p-3 h-100 text-center">#}
+{#          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" class="img-fluid mb-2" style="max-height:60px">#}
+{#          <h5>HTML5</h5>#}
+{#          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="text-info small">MDN Docs</a>#}
+{#        </div>#}
+{#      </div>#}
+{#      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="150">#}
+{#        <div class="glass p-3 h-100 text-center">#}
+{#          <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" class="img-fluid mb-2" style="max-height:60px">#}
+{#          <h5>CSS3 + Flexbox</h5>#}
+{#          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="text-info small">MDN Docs</a>#}
+{#        </div>#}
+{#      </div>#}
+{#      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">#}
+{#        <div class="glass p-3 h-100 text-center">#}
+{#          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JS" class="img-fluid mb-2" style="max-height:60px">#}
+{#          <h5>JavaScript (ES6+)</h5>#}
+{#          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="text-info small">MDN Docs</a>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</section>#}
+{##}
+{#<!-- ===== DEVOPS ===== -->#}
+{#<section class="py-5 bg-dark text-light" aria-labelledby="devops-heading">#}
+{#  <div class="container">#}
+{#    <div class="row align-items-center">#}
+{#      #}
+{#      <!-- Logo -->#}
+{#      <div class="col-md-6" data-aos="fade-right">#}
+{#        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg" #}
+{#             alt="Jenkins CI/CD" #}
+{#             class="img-fluid mb-3" #}
+{#             style="max-height:90px;">#}
+{#      </div>#}
+{#      #}
+{#      <!-- Description -->#}
+{#      <div class="col-md-6" data-aos="fade-left">#}
+{#        <h2 id="devops-heading" class="text-info">DevOps & CI/CD with Jenkins</h2>#}
+{#        <ul class="mb-3">#}
+{#          <li>Jenkins Pipelines for CI/CD automation</li>#}
+{#          <li>Docker integration with Jenkins agents</li>#}
+{#          <li>Scheduled builds and webhook triggers</li>#}
+{#          <li>Monitoring with UptimeRobot & custom alerts</li>#}
+{#        </ul>#}
+{#        <a href="https://www.jenkins.io/doc/" #}
+{#           target="_blank" #}
+{#           class="btn btn-outline-info btn-sm">#}
+{#           Jenkins Documentation#}
+{#        </a>#}
+{#      </div>#}
+{##}
+{#    </div>#}
+{#  </div>#}
+{#</section>#}
+{#  <!-- NEW SECTION: Containers & Docker -->#}
+{#<section class="container py-5 text-center" aria-labelledby="docker-heading">#}
+{#  <h2 id="docker-heading" class="display-5 fw-bold text-info mb-4" data-aos="fade-up">☁️ Containers & Cloud Deployment</h2>#}
+{#  <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">#}
+{#    Docker, Render, GitHub Actions – automate and scale your apps in modern cloud environments.#}
+{#  </p>#}
+{##}
+{#  <div class="row g-4 justify-content-center">#}
+{#    <!-- Docker -->#}
+{#    <div class="col-md-6 col-lg-3" data-aos="zoom-in">#}
+{#      <a href="https://www.docker.com/" target="_blank" rel="noopener" class="text-decoration-none text-white">#}
+{#        <div class="glass p-4 h-100">#}
+{#          <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker Logo" class="img-fluid mb-3" style="max-height:80px">#}
+{#          <h5 class="mb-2">Dockerized Applications</h5>#}
+{#          <p class="small">Containerize Django projects and streamline deployment with Dockerfiles and volumes.</p>#}
+{#        </div>#}
+{#      </a>#}
+{#    </div>#}
+{##}
+{#    <!-- GitHub Actions -->#}
+{#    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">#}
+{#      <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener" class="text-decoration-none text-white">#}
+{#        <div class="glass p-4 h-100">#}
+{#          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"#}
+{#     alt="GitHub Actions Logo" class="img-fluid mb-3" style="max-height:80px">#}
+{#          <h5 class="mb-2">CI/CD with GitHub Actions</h5>#}
+{#          <p class="small">Automate builds and deploys with GitHub Actions for professional-grade DevOps pipelines.</p>#}
+{#        </div>#}
+{#      </a>#}
+{#    </div>#}
+{##}
+{#    <!-- Google Cloud -->#}
+{#    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">#}
+{#      <a href="https://cloud.google.com/" target="_blank" rel="noopener" class="text-decoration-none text-white">#}
+{#        <div class="glass p-4 h-100">#}
+{#         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"#}
+{#     alt="Google Cloud Logo" class="img-fluid mb-3" style="max-height:80px">#}
+{#          <h5 class="mb-2">Google Cloud Hosting</h5>#}
+{#          <p class="small">Deploy and manage Django backends on Google Cloud Platform using App Engine or Cloud Run.</p>#}
+{#        </div>#}
+{#      </a>#}
+{#    </div>#}
+{#<!-- ChatGPT -->#}
+{#<div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="700">#}
+{#  <a href="https://chat.openai.com/" target="_blank" rel="noopener" class="text-decoration-none text-white">#}
+{#    <div class="glass p-4 h-100 text-center d-flex flex-column justify-content-between rounded-4 shadow-lg">#}
+{#      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"#}
+{#           alt="ChatGPT Logo" class="mx-auto mb-3"#}
+{#           style="max-height:70px; filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));">#}
+{#      <h5 class="mb-2 fw-semibold">ChatGPT Assistant</h5>#}
+{#      <p class="small text-white-50">Integrate the power of conversational AI into your tools, sites, and apps – with the official ChatGPT experience.</p>#}
+{#    </div>#}
+{#  </a>#}
+{#</div>#}
+{##}
+{##}
+{#<!-- OpenAI API -->#}
+{#<div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="700">#}
+{#  <a href="https://platform.openai.com/docs" target="_blank" rel="noopener" class="text-decoration-none text-white">#}
+{#    <div class="glass p-4 h-100">#}
+{#      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"#}
+{#           alt="OpenAI Logo" class="img-fluid mb-3" style="max-height:80px">#}
+{#      <h5 class="mb-2">OpenAI API & Services</h5>#}
+{#      <p class="small">Build smart apps with GPT, DALL·E, Whisper, and more – through the official OpenAI platform and developer API.</p>#}
+{#    </div>#}
+{#  </a>#}
+{#</div>#}
+{##}
+{##}
+{##}
+{#  </div>#}
+{#</section>#}
+{##}
+{#{% endblock %}#}
 {% extends "base.html" %}
-{% block title %}Home – Mario Peychev{% endblock %}
+{% load static %}
+{% block title %}Home – Mario P.K.{% endblock %}
 {% block content %}
 
-<!-- ===== HERO SECTION ===== -->
-<section class="hero">
+<!-- ===== HERO ===== -->
+<section class="hero py-5 text-white text-center" aria-labelledby="hero-heading">
   <div class="container">
-    <div class="row align-items-center">
-      <!-- Text -->
-      <div class="col-lg-6">
-        <h1 class="display-2 fw-bold mb-3 text-white">
-          Crafting&nbsp;Production-ready<br><span class="text-info">Full-Stack</span> Experiences
-        </h1>
-        <p class="lead mb-4">
-          I turn ideas into scalable web apps with <span class="text-info">Django</span>,
-          <span class="text-info">REST APIs</span> and bullet-proof CI/CD.
-        </p>
-        <a href="/projects/" class="btn btn-accent btn-lg me-3">View Projects</a>
-        <a href="/contact/" class="btn btn-outline-light btn-lg">Hire Me</a>
+    <h1 id="hero-heading" class="display-3 fw-bold mb-4" data-aos="fade-up">
+      Building Next-Gen Web Solutions
+    </h1>
+    <p class="lead" data-aos="fade-up" data-aos-delay="150">
+      From secure back-ends with <span class="text-info">Django</span> to automated DevOps pipelines.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="300">
+      <a href="https://www.google.com" target="_blank" class="btn btn-accent btn-lg me-2">Search on Google</a>
+      <a href="https://chat.openai.com" target="_blank" class="btn btn-outline-light btn-lg">Ask ChatGPT</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DJANGO ONLY ===== -->
+<section class="py-5 bg-black text-light" aria-labelledby="django-heading">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <!-- Image Block -->
+      <div class="col-lg-6 text-center" data-aos="fade-right">
+        <div class="glass p-4 rounded-4 shadow-lg">
+          <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png"
+               alt="Django logo" class="img-fluid" style="max-height:100px;">
+          <p class="mt-3 text-muted small">Secure · Scalable · Batteries included</p>
+        </div>
       </div>
 
-      <!-- Fancy code block / illustration -->
-      <div class="col-lg-6 d-none d-lg-block text-center">
-        <pre class="card-glass p-4 rounded text-start">
-<span style="color:#6cf;">class</span> <span style="color:#fff;">Portfolio</span>:
-    <span style="color:#6cf;">def</span> deploy(self):
-        tests = run_ci()
-        <span style="color:#6cf;">if</span> tests.passed:
-            render.deploy()
-        </pre>
+      <!-- Text Block -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <h2 id="django-heading" class="text-info display-5 fw-bold mb-4"> Django Framework</h2>
+        <ul class="list-unstyled fs-6 mb-4">
+          <li class="mb-2"> Django ORM & Migrations</li>
+          <li class="mb-2"> Authentication & Admin Customization</li>
+          <li class="mb-2"> REST APIs · Render Deployment · CI/CD</li>
+        </ul>
+        <a href="https://www.djangoproject.com/" target="_blank" rel="noopener"
+           class="btn btn-outline-info btn-sm">Visit djangoProject.com</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== STATS / HIGHLIGHTS ===== -->
-<section class="py-5">
+
+<!-- ===== POSTGRESQL (Modern) ===== -->
+<section class="py-5 bg-dark text-light" aria-labelledby="postgres-heading">
   <div class="container">
-    <div class="row g-4 text-center">
-      <div class="col-md-4">
-        <div class="card-glass rounded p-4 h-100">
-          <h2 class="h1 text-warning mb-2">📜 15+</h2>
-          <p class="h5 fw-semibold text-white">Certificates</p>
-          <p class="small text-secondary">SoftUni & external programs</p>
-          <a href="/certificates/" class="btn btn-outline-warning btn-sm">Browse</a>
-        </div>
+    <div class="row align-items-center g-4">
+      <!-- Text Block -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2 id="postgres-heading" class="text-warning display-5 fw-bold mb-4"> PostgreSQL</h2>
+        <ul class="list-unstyled mb-4 fs-6">
+          <li class="mb-2"> Relational data modeling</li>
+          <li class="mb-2"> Aggregations · Joins · Constraints</li>
+          <li class="mb-2"> Integrated with Django ORM</li>
+        </ul>
+        <a href="https://www.postgresql.org/" target="_blank" rel="noopener"
+           class="btn btn-outline-warning btn-sm">Visit Official Site</a>
       </div>
-      <div class="col-md-4">
-        <div class="card-glass rounded p-4 h-100">
-          <h2 class="h1 text-warning mb-2">📚 20+</h2>
-          <p class="h5 fw-semibold text-white">Courses</p>
-          <p class="small text-secondary">Python · JS · SQL · Django</p>
-          <a href="/courses/" class="btn btn-outline-warning btn-sm">Explore</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card-glass rounded p-4 h-100">
-          <h2 class="h1 text-warning mb-2">💻 4+</h2>
-          <p class="h5 fw-semibold text-white">Projects</p>
-          <p class="small text-secondary">REST APIs & clean UI</p>
-          <a href="/projects/" class="btn btn-outline-warning btn-sm">See work</a>
+
+      <!-- Image Block -->
+      <div class="col-lg-6 text-center" data-aos="fade-left">
+        <div class="glass p-4 rounded-4 shadow-lg">
+          <img src="https://www.postgresql.org/media/img/about/press/elephant.png"
+               alt="PostgreSQL Logo" class="img-fluid" style="max-height:150px;">
+          <p class="mt-3 text-muted small"></p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ===== FRONTEND STACK (Modernized) ===== -->
+<section class="py-5 bg-black text-light" aria-labelledby="frontend-heading">
+  <div class="container">
+    <h2 id="frontend-heading" class="text-info text-center mb-5 fw-bold display-5" data-aos="fade-up"> Frontend Stack</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- HTML5 -->
+      <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass p-4 rounded-4 shadow-lg h-100 text-center transition hover-shadow hover-scale">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML5 Logo"
+               class="img-fluid mb-3" style="max-height:60px">
+          <h5 class="fw-semibold">HTML5</h5>
+          <p class="small text-muted">Semantic markup & modern structure.</p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
+             class="btn btn-outline-info btn-sm mt-2">MDN Docs</a>
+        </div>
+      </div>
+
+      <!-- CSS3 -->
+      <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass p-4 rounded-4 shadow-lg h-100 text-center transition hover-shadow hover-scale">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS3 Logo"
+               class="img-fluid mb-3" style="max-height:60px">
+          <h5 class="fw-semibold">CSS3 + Flexbox</h5>
+          <p class="small text-muted">Responsive layouts & modern design.</p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
+             class="btn btn-outline-info btn-sm mt-2">MDN Docs</a>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass p-4 rounded-4 shadow-lg h-100 text-center transition hover-shadow hover-scale">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript Logo"
+               class="img-fluid mb-3" style="max-height:60px">
+          <h5 class="fw-semibold">JavaScript (ES6+)</h5>
+          <p class="small text-muted">Dynamic interactivity & logic.</p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
+             class="btn btn-outline-info btn-sm mt-2">MDN Docs</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== DEVOPS / CI ===== -->
+<section class="py-5 bg-dark text-light" aria-labelledby="devops-heading">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg"
+             alt="Jenkins" class="img-fluid mb-3" style="max-height:90px;">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h2 id="devops-heading" class="text-info">DevOps & CI/CD with Jenkins</h2>
+        <ul class="mb-3">
+          <li>Pipelines for test + deploy</li>
+          <li>Docker-based Jenkins agents</li>
+          <li>Webhook & scheduled triggers</li>
+          <li>UptimeRobot alerts</li>
+        </ul>
+        <a href="https://www.jenkins.io/doc/" target="_blank"
+           class="btn btn-outline-info btn-sm">Jenkins docs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTAINERS & CLOUD ===== -->
+<section class="container py-5 text-center" aria-labelledby="docker-heading">
+  <h2 id="docker-heading" class="display-5 fw-bold text-info mb-4" data-aos="fade-up">
+    ☁️ Containers & Cloud Deployment
+  </h2>
+  <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">
+    Docker, Render, GitHub Actions – automate & scale your apps in the cloud.
+  </p>
+
+  <div class="row g-4 justify-content-center">
+    <!-- Docker -->
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+      <a href="https://www.docker.com/" target="_blank" rel="noopener" class="text-decoration-none text-white">
+        <div class="glass p-4 h-100">
+          <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png"
+               alt="Docker" class="img-fluid mb-3" style="max-height:80px">
+          <h5>Dockerised apps</h5>
+          <p class="small">Ship Django projects in reproducible containers.</p>
+        </div>
+      </a>
+    </div>
+    <!-- GitHub Actions -->
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+      <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener"
+         class="text-decoration-none text-white">
+        <div class="glass p-4 h-100">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+               alt="GitHub Actions" class="img-fluid mb-3" style="max-height:80px">
+          <h5>GitHub Actions</h5>
+          <p class="small">CI/CD pipelines directly from your repo.</p>
+        </div>
+      </a>
+    </div>
+    <!-- GCP -->
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+      <a href="https://cloud.google.com/" target="_blank" rel="noopener"
+         class="text-decoration-none text-white">
+        <div class="glass p-4 h-100">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+               alt="GCP" class="img-fluid mb-3" style="max-height:80px">
+          <h5>Google Cloud</h5>
+          <p class="small">Deploy with App Engine or Cloud Run.</p>
+        </div>
+      </a>
+    </div>
+    <!-- OpenAI -->
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+      <a href="https://platform.openai.com/docs" target="_blank" rel="noopener"
+         class="text-decoration-none text-white">
+        <div class="glass p-4 h-100">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+               alt="OpenAI" class="img-fluid mb-3" style="max-height:80px">
+          <h5>OpenAI API</h5>
+          <p class="small">Power apps with GPT, DALL·E & Whisper.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IDEs & Tools (Symmetric, CDN images) ===== -->
+<section class="py-5 bg-black text-light" aria-labelledby="tools-heading">
+  <div class="container">
+    <h2 id="tools-heading" class="text-info mb-4 text-center" data-aos="fade-up"> IDEs & Tools</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- PyCharm -->
+      <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+        <div class="glass p-4 h-100 text-center rounded-4">
+          <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.svg"
+               alt="PyCharm Logo" class="img-fluid mb-3" style="max-height:60px">
+          <h5 class="fw-semibold">PyCharm</h5>
+          <p class="small text-muted">JetBrains IDE for Python and Django</p>
+          <a href="https://www.jetbrains.com/pycharm/download/" target="_blank" class="btn btn-outline-info btn-sm">Download</a>
+        </div>
+      </div>
+
+      <!-- DataGrip -->
+      <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="glass p-4 h-100 text-center rounded-4">
+          <img src="https://resources.jetbrains.com/storage/products/datagrip/img/meta/datagrip_logo_300x300.png"
+               alt="DataGrip Logo" class="img-fluid mb-3" style="max-height:60px">
+          <h5 class="fw-semibold">DataGrip</h5>
+          <p class="small text-muted">Professional DB client for SQL, PostgreSQL, and more</p>
+          <a href="https://www.jetbrains.com/datagrip/download/" target="_blank" class="btn btn-outline-info btn-sm">Download</a>
+        </div>
+      </div>
+
+      <!-- VS Code -->
+      <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="glass p-4 h-100 text-center rounded-4">
+          <img src="https://code.visualstudio.com/assets/favicon.ico"
+               alt="VS Code Logo" class="img-fluid mb-3" style="max-height:60px">
+          <h5 class="fw-semibold">Visual Studio Code</h5>
+          <p class="small text-muted">Lightweight code editor by Microsoft</p>
+          <a href="https://code.visualstudio.com/download" target="_blank" class="btn btn-outline-info btn-sm">Download</a>
+        </div>
+      </div>
+
+      <!-- Python Docs -->
+      <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="glass p-4 h-100 text-center rounded-4">
+          <img src="https://www.python.org/static/community_logos/python-logo.png"
+               alt="Python Docs" class="img-fluid mb-3" style="max-height:60px">
+          <h5 class="fw-semibold">Python Docs</h5>
+          <p class="small text-muted">Official documentation for Python 3</p>
+          <a href="https://docs.python.org/3/" target="_blank" class="btn btn-outline-info btn-sm">Read Docs</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ===== Linux Book Section ===== -->
+<section class="py-5 bg-dark text-light" aria-labelledby="linux-book-heading">
+  <div class="container text-center">
+    <h2 id="linux-book-heading" class="text-info mb-4" data-aos="fade-up">The Linux Command Line Book</h2>
+    <p class="lead text-muted mb-4" data-aos="fade-up" data-aos-delay="100">
+      Learn to master the terminal and take full control of your system – with this free PDF by William Shotts.
+    </p>
+    <div class="d-flex justify-content-center mb-4" data-aos="zoom-in" data-aos-delay="200">
+      <a href="{% static 'books/LinuxBook.pdf' %}" target="_blank" class="btn btn-outline-info btn-lg">
+         Read the Book
+      </a>
+    </div>
+    <p class="text-muted small" data-aos="fade-up" data-aos-delay="300">
+      Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank" class="text-decoration-none text-info">CC BY-NC-ND 3.0</a> · From <a href="https://linuxcommand.org/tlcl.php" target="_blank" class="text-decoration-none text-info">linuxcommand.org</a>
+    </p>
   </div>
 </section>
 

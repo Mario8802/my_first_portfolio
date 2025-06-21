@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="github-hero" id="github" aria-label="GitHub Portfolio Section">
+  <div class="github-container" data-aos="fade-up" data-aos-delay="100">
+
+    <!-- HEADLINE -->
+    <h1 class="gh-title"> My <span>GitHub</span> </h1>
+    <p class="gh-subtitle">
+      Real code. Real passion. Explore what I build, contribute, and dream.
+    </p>
+
+    <!-- GALLERY -->
+    <div class="gh-gallery" data-aos="zoom-in-up" data-aos-delay="300">
+      <a href="https://github.com/trending" class="gh-card" target="_blank" aria-label="GitHub Trending Repositories">
+  <img src="{% static 'images/github-overview.png' %}" alt="GitHub Trending">
+</a>
+
+
+      <a href="https://github.com/Mario8802" class="gh-card" target="_blank" aria-label="GitHub Profile">
+        <img src="{% static 'images/github-profile.png' %}" alt="GitHub Profile">
+      </a>
+        
+        
+        <a href="https://dev.to/t/github" class="gh-card" target="_blank" aria-label="GitHub Profile">
+        <img src="{% static 'images/dev.png' %}" alt="GitHub Profile">
+      </a>
+    </div>
+
+    <!-- BUTTON -->
+    <form class="needs-validation" novalidate data-aos="fade-up" data-aos-delay="500">
+     
+      <a href="https://git-scm.com/doc" class="gh-button" target="_blank">
+         Learn Git
+      </a>
+    </form>
+  </div>
+</section>
+
+<!-- STYLES -->
+<style>
+:root {
+  --color-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --accent: #00ffc8;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-brd: rgba(255, 255, 255, 0.12);
+  --radius: 18px;
+  --transition: 0.35s ease;
+}
+
+.github-hero {
+  background: var(--color-bg);
+  color: #e0f7ff;
+  padding: 7rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.github-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100px 100px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+}
+.github-container {
+  max-width: 1140px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.gh-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+.gh-title span {
+  background: linear-gradient(90deg, #00ffc8, #66ffff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.gh-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-inline: auto;
+  opacity: 0.85;
+}
+.gh-gallery {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-bottom: 3.5rem;
+}
+.gh-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-brd);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: block;
+}
+.gh-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.gh-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.65);
+}
+.gh-card:hover img {
+  transform: scale(1.05);
+}
+.gh-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #00b894, #00ffc8);
+  color: #01392e;
+  border-radius: 48px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 255, 200, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.gh-button:hover {
+  transform: scale(1.05) translateY(-2px);
+  background: linear-gradient(135deg, #00a683, #00e5b4);
+}
+.form-floating input {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid var(--card-brd);
+  border-radius: var(--radius);
+}
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 200, 0.2);
+}
+@media (max-width: 768px) {
+  .gh-title { font-size: 2.4rem; }
+  .gh-subtitle { font-size: 1.05rem; }
+}
+</style>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once: true, duration: 700 });</script>
+
+<!-- Bootstrap validation script -->
+<script>
+(() => {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation')
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+{% endblock %}

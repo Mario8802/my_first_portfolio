@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}Certificates – Mario Peychev{% endblock %}
+{% block content %}
+
+<!-- =====================  STYLES & LIBS  ===================== -->
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+<style>
+  /* ---------- Ocean background ---------- */
+  body{
+    background:linear-gradient(120deg,#0f2027,#203a43,#2c5364,#0f2027);
+    background-size:600% 600%;animation:oceanWaves 30s ease infinite;overflow-x:hidden;
+  }
+  @keyframes oceanWaves{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+  /* ---------- Counter ---------- */
+  #counter{font-size:2rem;font-weight:700;color:#66ffff;text-shadow:0 0 10px rgba(0,255,255,.8)}
+
+  /* ---------- Filter chips ---------- */
+  .chip{display:inline-block;padding:.35rem 1rem;margin:.2rem;border-radius:30px;cursor:pointer;font-weight:600;font-size:.9rem;background:#00d4ff1a;color:#66ffff;border:1px solid #00d4ff;transition:.3s}
+  .chip.active,.chip:hover{background:#00d4ff;color:#000}
+
+  /* ---------- Glass card ---------- */
+  .card-glass{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:1rem;backdrop-filter:blur(20px);color:#fff;position:relative;overflow:hidden;transition:transform .5s,box-shadow .5s;perspective:1000px}
+  .card-glass::before{content:"";position:absolute;width:200%;height:200%;background:radial-gradient(circle,rgba(0,255,255,.25)10%,transparent 60%);animation:rotateLight 15s linear infinite;z-index:0}
+  .card-glass>*{position:relative;z-index:1}
+  @keyframes rotateLight{0%{transform:rotate(0deg) translateX(-50%) translateY(-50%)}100%{transform:rotate(360deg) translateX(-50%) translateY(-50%)}}
+  .card-glass:hover{box-shadow:0 0 25px rgba(0,255,255,.5)}
+
+  /* ---------- Ripple button ---------- */
+  .btn-accent{background:linear-gradient(135deg,#00d4ff,#66ffff);border:none;color:#000;font-weight:700;padding:.55rem 1.3rem;border-radius:50px;position:relative;overflow:hidden;transition:.3s;box-shadow:0 0 10px rgba(0,255,255,.4)}
+  .btn-accent:hover{background:#fff;color:#000;box-shadow:0 0 20px rgba(255,255,255,.6)}
+  .btn-accent::after{content:"";position:absolute;width:10px;height:10px;background:rgba(255,255,255,.7);border-radius:50%;transform:scale(1);opacity:0;pointer-events:none;animation:ripple .6s ease-out}
+  @keyframes ripple{to{transform:scale(20);opacity:0}}
+
+  /* ---------- tilt reset on leave ---------- */
+  .tilt{transform-style:preserve-3d}
+</style>
+
+<!-- =====================  SECTION ===================== -->
+<section class="container py-5" id="cert-section">
+  <h2 class="text-center fw-bold display-4 mb-2 text-white" data-aos="zoom-in"> Certificates</h2>
+  <p class="text-center text-secondary mb-4">Certificates collected on my journey &nbsp;|&nbsp; <span id="counter">0</span> total</p>
+
+  <!-- Filter Chips -->
+  <div class="text-center mb-4" id="chips">
+    <span class="chip active" data-topic="all">All</span>
+    <span class="chip" data-topic="python">Python</span>
+    <span class="chip" data-topic="database">Database</span>
+    <span class="chip" data-topic="web">Web</span>
+    <span class="chip" data-topic="security">Security</span>
+  </div>
+
+  <div class="row g-4" id="cert-grid">
+    <!--  CERT 1  -->
+    <div class="col-sm-6 col-lg-4 topic-python tilt" data-aos="fade-up" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3">
+          <a href="https://softuni.bg/trainings/4162/programming-basics-with-python-july-2023" class="link-light" target="_blank">Programming&nbsp;Basics</a>
+        </h5>
+<a href="https://softuni.bg/certificates/details/182548/dd8a2d31" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 2  -->
+    <div class="col-sm-6 col-lg-4 topic-python tilt" data-aos="fade-up" data-aos-delay="100" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3">
+          <a href="https://softuni.bg/trainings/4222/programming-fundamentals-with-python-september-2023" class="link-light" target="_blank">Fundamentals</a>
+        </h5>
+<a href="https://softuni.bg/certificates/details/194594/fa095f11" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 3  -->
+    <div class="col-sm-6 col-lg-4 topic-python tilt" data-aos="fade-up" data-aos-delay="200" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3">
+          <a href="https://softuni.bg/trainings/4370/python-advanced-january-2024" class="link-light" target="_blank">Python&nbsp;Advanced</a>
+        </h5>
+<a href="https://softuni.bg/certificates/details/203735/824e9431" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 4  -->
+    <div class="col-sm-6 col-lg-4 topic-python tilt" data-aos="fade-up" data-aos-delay="300" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3"><a href="https://softuni.bg/trainings/3964/python-oop-february-2023" class="link-light" target="_blank">OOP</a></h5>
+<a href="https://softuni.bg/certificates/details/211544/0cc2562a" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 5  -->
+    <div class="col-sm-6 col-lg-4 topic-database tilt" data-aos="fade-up" data-aos-delay="400" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3"><a href="https://softuni.bg/trainings/4536/postgresql-may-2024" class="link-light" target="_blank">PostgreSQL</a></h5>
+<a href="https://softuni.bg/certificates/details/216977/9f479593" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 6  -->
+    <div class="col-sm-6 col-lg-4 topic-database tilt" data-aos="fade-up" data-aos-delay="500" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3"><a href="https://softuni.bg/trainings/4547/python-orm-june-2024" class="link-light" target="_blank">Python&nbsp;ORM</a></h5>
+<a href="https://softuni.bg/certificates/certificates/converttoimage/221368?code=303b0635" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 7  -->
+    <div class="col-sm-6 col-lg-4 topic-web tilt" data-aos="fade-up" data-aos-delay="600" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3"><a href="https://softuni.bg/modules/139/python-web/1500" class="link-light" target="_blank">Python&nbsp;Web</a></h5>
+<a href="https://softuni.bg/certificates/certificates/converttoimage/233243?code=de7b80fb" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 8  -->
+    <div class="col-sm-6 col-lg-4 topic-web tilt" data-aos="fade-up" data-aos-delay="700" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3"><a href="https://softuni.bg/trainings/4849/html-css-january-2025" class="link-light" target="_blank">HTML&nbsp;&amp;&nbsp;CSS</a></h5>
+<a href="https://softuni.bg/certificates/details/237841/27e52095" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 9  -->
+    <div class="col-sm-6 col-lg-4 topic-security tilt" data-aos="fade-up" data-aos-delay="800" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3"><a href="https://softuni.bg/trainings/4909/introduction-to-cyber-security-february-2025" class="link-light" target="_blank">Intro&nbsp;to&nbsp;Cyber&nbsp;Security</a></h5>
+<a href="https://softuni.bg/certificates/details/240872/8c7b672c" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+
+    <!--  CERT 10  -->
+    <div class="col-sm-6 col-lg-4 topic-security tilt" data-aos="fade-up" data-aos-delay="900" data-cert>
+      <div class="card-glass h-100 p-4 text-center">
+        <h5 class="fw-bold mb-3"><a href="https://softuni.bg/trainings/4910/reconnaissance-fundamentals-april-2025" class="link-light" target="_blank">Recon&nbsp;Fundamentals</a></h5>
+<a href="https://softuni.bg/certificates/details/244317/bee020f9" target="_blank" class="btn btn-accent btn-sm ripple"> View</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================  MODAL  ===================== -->
+<div class="modal fade" id="certModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark border-0">
+      <button class="btn-close btn-close-white ms-auto me-2 mt-2" data-bs-dismiss="modal"></button>
+      <div class="modal-body p-0">
+        <iframe id="certFrame" class="w-100" style="height:80vh;border:0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================  SCRIPTS  ===================== -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>AOS.init({once:true,duration:800,easing:"ease-out-back"});</script>
+<script>
+  // Ripple
+  document.querySelectorAll('.ripple').forEach(btn=>btn.addEventListener('click',e=>{
+    const x=e.offsetX,y=e.offsetY,span=document.createElement('span');
+    span.style.left=`${x}px`;span.style.top=`${y}px`;btn.appendChild(span);
+    setTimeout(()=>span.remove(),600);
+  }));
+
+  // Lightbox modal
+  document.getElementById('certModal').addEventListener('show.bs.modal',e=>{
+    document.getElementById('certFrame').src=e.relatedTarget.dataset.src;
+  });
+
+  // Hover tilt
+  document.querySelectorAll('.tilt').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+      const rotateY=(x-r.width/2)/20;const rotateX=-(y-r.height/2)/20;
+      card.children[0].style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    card.addEventListener('mouseleave',()=>card.children[0].style.transform='');
+  });
+
+  // Counter animate
+  const total=document.querySelectorAll('[data-cert]').length,counter=document.getElementById('counter');
+  let cur=0;const inc=()=>{if(cur<=total){counter.textContent=cur++;requestAnimationFrame(inc);}};inc();
+
+  // Filter chips
+  document.getElementById('chips').addEventListener('click',e=>{
+    if(!e.target.classList.contains('chip'))return;document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    e.target.classList.add('active');const topic=e.target.dataset.topic;
+    document.querySelectorAll('[data-cert]').forEach(card=>{
+      card.style.display=(topic==='all'||card.classList.contains(`topic-${topic}`))?'':'none';
+    });
+  });
+</script>
+
+{% endblock %}

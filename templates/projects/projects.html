@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Projects – Mario Peychev{% endblock %}
+{% block content %}
+
+<section class="container py-5" aria-labelledby="project-detail-heading">
+  <h2 id="project-detail-heading" class="text-center fw-bold mb-5 display-4" data-aos="fade-up"> CyclingNets</h2>
+  <div class="row align-items-center">
+    <div class="col-md-6" data-aos="fade-right">
+      <img src="{% static 'images/cyclingnets.png' %}" class="img-fluid rounded shadow" alt="CyclingNets Project Screenshot">
+    </div>
+    <div class="col-md-6" data-aos="fade-left">
+      <h3 class="fw-bold mb-3">CyclingNets – A Platform for Cyclists</h3>
+      <p>A web application that offers routes, events, and communication opportunities between cyclists. Built with Django, PostgreSQL, REST API, and Bootstrap 5.</p>
+      <p><strong>Tech Stack:</strong> Django, PostgreSQL, REST API, Bootstrap 5</p>
+      <a href="https://cyclingnets.onrender.com" class="btn btn-accent btn-lg mt-3" target="_blank">🌐 View Website</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

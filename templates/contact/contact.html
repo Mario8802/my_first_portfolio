@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact – Mario P.K.{% endblock %}
+
+{# ── HEAD extra ──────────────────────────────────────────────── #}
+{% block head_extra %}
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS scroll-reveal -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+{% endblock %}
+
+{# ── CONTENT ─────────────────────────────────────────────────── #}
+{% block content %}
+<section class="container-xxl py-5">
+  <h2 class="text-center display-5 fw-bold text-info mb-3">Let’s Connect</h2>
+  <p class="text-center text-muted mb-5">
+    Whether it’s about work, collaboration or just feedback – I’d love to hear from you.
+  </p>
+
+  <div class="row g-4">
+    <!-- ───── Work Proposal ───── -->
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="card-glass work p-4 rounded-4 shadow-lg h-100">
+        <h4 class="text-warning mb-3">
+          <i class="bi bi-briefcase-fill me-2"></i>Work Proposal
+        </h4>
+
+        <form method="post" class="needs-validation" novalidate>
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <input name="name" type="text" class="form-control" placeholder="Full Name" required>
+            <label>Full Name</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="email" type="email" class="form-control"
+                   pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                   placeholder="Email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="form-floating mb-4">
+            <textarea name="message" class="form-control" placeholder="Project details"
+                      style="height:140px" required></textarea>
+            <label>Project details</label>
+          </div>
+
+          <button class="btn btn-warning w-100 fw-semibold" type="submit">
+            Send Proposal
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ───── Feedback ───── -->
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="card-glass feedback p-4 rounded-4 shadow-lg h-100">
+        <h4 class="text-success mb-3">
+          <i class="bi bi-chat-dots-fill me-2"></i>Suggestions / Feedback
+        </h4>
+
+        <form method="post" class="needs-validation" novalidate>
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <input name="nickname" type="text" class="form-control" placeholder="Name or Nickname" required>
+            <label>Name or Nickname</label>
+          </div>
+
+          <div class="form-floating mb-4">
+            <textarea name="feedback" class="form-control" placeholder="Your message…"
+                      style="height:215px" required></textarea>
+            <label>Your message…</label>
+          </div>
+
+          <button class="btn btn-success w-100 fw-semibold" type="submit">
+            Send Feedback
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{# ── STYLE extra ─────────────────────────────────────────────── #}
+{% block style_extra %}
+<style>
+:root{
+  /* Gradients */
+  --work-start:#ffd600; --work-end:#ff6f00;
+  --feed-start:#00e5ff; --feed-end:#00c853;
+  /* Glass surfaces */
+  --glass-bg:rgba(255,255,255,.05);
+  --glass-brd:rgba(255,255,255,.12);
+}
+
+/* ── Glass Card ───────────────────────────── */
+.card-glass{
+  position:relative;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-brd);
+  backdrop-filter:blur(20px);
+  transition:all .35s ease;
+}
+.card-glass:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 48px rgba(0,0,0,.6);
+}
+.card-glass::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:inherit;
+  opacity:.7; pointer-events:none;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude; -webkit-mask-composite:xor;
+  transition:opacity .3s ease;
+}
+.card-glass.work::before   {background:linear-gradient(135deg,var(--work-start),var(--work-end));}
+.card-glass.feedback::before{background:linear-gradient(135deg,var(--feed-start),var(--feed-end));}
+.card-glass:hover::before  {opacity:1;}
+
+/* ── Floating inputs ──────────────────────── */
+.form-floating>.form-control,
+.form-floating>textarea{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  color:#f0f8ff;
+}
+.form-floating>.form-control:focus,
+.form-floating>textarea:focus{
+  border-color:#6ff;
+  background:rgba(255,255,255,.15);
+}
+
+/* ── Smooth scroll on invalid form ───────── */
+body:has(.needs-validation.was-validated input:invalid){
+  scroll-behavior:smooth;
+}
+</style>
+{% endblock %}
+
+{# ── SCRIPT extra ────────────────────────────────────────────── #}
+{% block script_extra %}
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({once:true,duration:700});</script>
+
+<script>
+(()=>{
+  document.querySelectorAll('.needs-validation').forEach(form=>{
+    form.addEventListener('submit',e=>{
+      if(!form.checkValidity()){
+        e.preventDefault();e.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    },false);
+  });
+})();
+</script>
+{% endblock %}

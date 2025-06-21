@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Privacy Policy – Mario P.K.{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+  <h1 class="display-5 fw-bold mb-4 text-info">Privacy Policy</h1>
+
+  <p>Last updated: {{ "now" | date:"F d, Y" }}</p>
+
+  <h2 class="mt-4 h5 text-info">1. Who we are</h2>
+  <p>
+    This website is operated by Mario P.K. We are committed to protecting your privacy and
+    handling your data in an open and transparent manner.
+  </p>
+
+  <h2 class="mt-4 h5 text-info">2. What data we collect</h2>
+  <ul>
+    <li>Contact information you submit via the <em>Contact</em> form</li>
+    <li>Aggregated, anonymous analytics data (e.g. page views, browser type)</li>
+  </ul>
+
+  <h2 class="mt-4 h5 text-info">3. How we use your data</h2>
+  <p>
+    We process your data solely to respond to enquiries and to monitor site performance.
+    We do not sell or share personal information with third parties.
+  </p>
+
+  <h2 class="mt-4 h5 text-info">4. Your rights</h2>
+  <p>
+    You can request access to, correction of, or deletion of your personal data at any time
+    by contacting us through the form on the <a href="{% url 'contact' %}">Contact</a> page.
+  </p>
+
+  <h2 class="mt-4 h5 text-info">5. Contact</h2>
+  <p>
+    If you have any privacy-related questions or requests, please use the <a href="{% url 'contact' %}">Contact</a> form.
+  </p>
+</section>
+{% endblock %}
