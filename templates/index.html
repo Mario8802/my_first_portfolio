@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Home – Mario Peychev{% endblock %}
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text -->
+      <div class="col-lg-6">
+        <h1 class="display-2 fw-bold mb-3 text-white">
+          Crafting&nbsp;Production-ready<br><span class="text-info">Full-Stack</span> Experiences
+        </h1>
+        <p class="lead mb-4">
+          I turn ideas into scalable web apps with <span class="text-info">Django</span>,
+          <span class="text-info">REST APIs</span> and bullet-proof CI/CD.
+        </p>
+        <a href="/projects/" class="btn btn-accent btn-lg me-3">View Projects</a>
+        <a href="/contact/" class="btn btn-outline-light btn-lg">Hire Me</a>
+      </div>
+
+      <!-- Fancy code block / illustration -->
+      <div class="col-lg-6 d-none d-lg-block text-center">
+        <pre class="card-glass p-4 rounded text-start">
+<span style="color:#6cf;">class</span> <span style="color:#fff;">Portfolio</span>:
+    <span style="color:#6cf;">def</span> deploy(self):
+        tests = run_ci()
+        <span style="color:#6cf;">if</span> tests.passed:
+            render.deploy()
+        </pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS / HIGHLIGHTS ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card-glass rounded p-4 h-100">
+          <h2 class="h1 text-warning mb-2">📜 15+</h2>
+          <p class="h5 fw-semibold text-white">Certificates</p>
+          <p class="small text-secondary">SoftUni & external programs</p>
+          <a href="/certificates/" class="btn btn-outline-warning btn-sm">Browse</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-glass rounded p-4 h-100">
+          <h2 class="h1 text-warning mb-2">📚 20+</h2>
+          <p class="h5 fw-semibold text-white">Courses</p>
+          <p class="small text-secondary">Python · JS · SQL · Django</p>
+          <a href="/courses/" class="btn btn-outline-warning btn-sm">Explore</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-glass rounded p-4 h-100">
+          <h2 class="h1 text-warning mb-2">💻 4+</h2>
+          <p class="h5 fw-semibold text-white">Projects</p>
+          <p class="small text-secondary">REST APIs & clean UI</p>
+          <a href="/projects/" class="btn btn-outline-warning btn-sm">See work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
