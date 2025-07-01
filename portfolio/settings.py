@@ -17,7 +17,7 @@ load_dotenv(BASE_DIR / '.env')
 
 # ─── Security ────────────────────────────────────────────────────────────────
 SECRET_KEY: str = os.getenv('DJANGO_SECRET_KEY', 'please‑change‑me')
-DEBUG=True
+DEBUG = True
 ALLOWED_HOSTS: list[str] = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
 
 # ─── Application definition ─────────────────────────────────────────────────
@@ -41,8 +41,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -100,6 +102,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # ─── Internationalization ───────────────────────────────────────────────────
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('de', 'German'),
+    ('bg', 'Bulgarian'),
+    ('fr', 'French'),
+]
+
+LOCALE_PATHS = [BASE_DIR / 'locale']
+
 TIME_ZONE = os.getenv('DJANGO_TIME_ZONE', 'UTC')
 USE_I18N = True
 USE_TZ = True

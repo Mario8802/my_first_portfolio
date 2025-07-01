@@ -97,6 +97,23 @@
     </div>
 
     <small class="text-secondary d-block mb-1">© {{ now|date:"Y" }} Mario P.K. – All rights reserved</small>
+    <!-- Language Switcher -->
+<form method="post" action="{% url 'set_language' %}" class="d-inline-block mt-3">
+  {% csrf_token %}
+{#  <label for="language-selector" class="me-2 text-light"> Language:</label>#}
+{#  <select name="language" id="language-selector" class="form-select d-inline w-auto" onchange="this.form.submit()">#}
+{#    <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>#}
+{#    <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>Deutsch</option>#}
+{#  <option value="fr" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>Français</option>#}
+{# <option value="cs" {% if LANGUAGE_CODE == 'cs' %}selected{% endif %}>Čeština</option>#}
+{##}
+{##}
+{#    <option value="bg" {% if LANGUAGE_CODE == 'bg' %}selected{% endif %}>Български</option>#}
+
+  </select>
+</form>
+
+
     <small class="text-muted"><a href="{% url 'privacy' %}">Privacy Policy</a>
 </small>
   </div>
