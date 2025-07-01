@@ -1,15 +1,24 @@
-# Ignore Python virtual environment
-venv/
+# Python
 __pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
 *.pyc
-*.pyo
-*.pyd
 
-# Ignore VS Code settings
-.vscode/
-
-# Ignore system files
-.DS_Store
-Thumbs.db
-# secrets
+# Virtual environments
+venv/
 .env
+.env.*
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# IDEs
+.vscode/
+.idea/
