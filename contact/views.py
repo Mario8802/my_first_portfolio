@@ -28,5 +28,6 @@ def contact_submit(request):
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[settings.CONTACT_RECEIVER_EMAIL],
         )
-        return JsonResponse({"ok": True})
+        return render(request, 'contact/success.html')
+
     return JsonResponse({"error": "Invalid request"}, status=400)
