@@ -2,6 +2,8 @@
 
 **Live site:** [https://mario-showcase.onrender.com](https://mario-showcase.onrender.com)
 
+⚠️ **Note:** The server may go to sleep if inactive. The first request after a period of inactivity can take up to **50 seconds** to wake up. Please be patient when accessing the live demo.
+
 ## 📝 Description
 
 This is my personal portfolio website, designed to showcase:
