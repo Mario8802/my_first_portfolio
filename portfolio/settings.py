@@ -16,11 +16,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / '.env')
 
 # ─── Security ────────────────────────────────────────────────────────────────
-SECRET_KEY: str = os.getenv('DJANGO_SECRET_KEY', 'please‑change‑me')
+SECRET_KEY: str = os.getenv('DJANGO_SECRET_KEY', 'please-change-me')
 DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS]
+
+# Admin path from env (e.g. "admin-<random>/"). Always ensure trailing slash.
+ADMIN_URL = os.getenv('DJANGO_ADMIN_URL', 'admin-hidden-123/')
+if not ADMIN_URL.endswith('/'):
+    ADMIN_URL += '/'
 # ─── Application definition ─────────────────────────────────────────────────
 INSTALLED_APPS = [
     # Django core
