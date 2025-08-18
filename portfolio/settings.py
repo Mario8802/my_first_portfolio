@@ -21,6 +21,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS]
+CSRF_TRUSTED_ORIGINS = [
+    'https://mario-showcase.onrender.com',
+]
 
 # Admin path from env (e.g. "admin-<random>/"). Always ensure trailing slash.
 ADMIN_URL = os.getenv('DJANGO_ADMIN_URL', 'admin-hidden-123/')
