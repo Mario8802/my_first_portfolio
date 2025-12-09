@@ -87,3 +87,4 @@ portfolio/
 
 🤖 Uptime bot
 The site is kept alive using UptimeRobot which pings the Render instance regularly to prevent it from idling.
+ 
